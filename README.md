@@ -31,11 +31,11 @@ To use the project run `npm start`. This will start the server on your local mac
 
 ##### Create User `POST` http://{YourURL}/api/users/
 
-```
+```json
 {
-  // Username and Email must be unique
-  "username": "test5",
-  "email": "test5@gmail.com"
+	// Username and Email must be unique
+	"username": "test5",
+	"email": "test5@gmail.com"
 }
 ```
 
@@ -55,11 +55,11 @@ To use the project run `npm start`. This will start the server on your local mac
 
 ##### Create Thought `POST` `http://{YourURL}/api/thoughts/`
 
-```
+```json
 {
-  "thoughtText": "Here's another cool thought... but...",
-  "username": "test1",
-  "userId": "61b4f86302f7f22f43d63e9d"
+	"thoughtText": "Here's another cool thought... but...",
+	"username": "test1",
+	"userId": "61b4f86302f7f22f43d63e9d"
 }
 ```
 
@@ -69,7 +69,7 @@ To use the project run `npm start`. This will start the server on your local mac
 
 ##### Add reaction `POST` `http://{YourURL}/api/thoughts/:thoughtId/reactions/:reactionId`
 
-```
+```json
 {
 	"username": "test2",
 	"ReactionBody": "Love this thought"
