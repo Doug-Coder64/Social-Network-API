@@ -2,10 +2,10 @@ const { Schema, model } = require('mongoose');
 
 const UserSchema = new Schema(
 	{
-		name: {
+		username: {
 			type: String,
 			unique: true,
-			required: 'Username is Required',
+			required: true,
 			trim: true,
 		},
 		email: {
@@ -13,10 +13,7 @@ const UserSchema = new Schema(
 			unique: true,
 			match: [/.+@.+\..+/],
 		},
-		userCreated: {
-			type: Date,
-			default: Date.now,
-		},
+
 		thoughts: [
 			{
 				type: Schema.Types.ObjectId,

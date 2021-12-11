@@ -65,10 +65,10 @@ const thoughtController = {
 			.catch((err) => res.json(err));
 	},
 
-	addReaction({ params, body }, res) {
+	addReaction(req, res) {
 		Thought.findOneAndUpdate(
-			{ _id: params.thoughId },
-			{ $push: { reactions: body } },
+			{ _id: req.params.thoughtId },
+			{ $addToSet: { reactions: req.body } },
 			{ new: true, runValidators: true }
 		)
 			.then((dbThoughtData) => {
@@ -78,7 +78,7 @@ const thoughtController = {
 				}
 				res.json(dbThoughtData);
 			})
-			.catch((err) => res.json(err));
+			.catch((err) => res.status(500).json(err));
 	},
 
 	deleteReaction({ params }, res) {
