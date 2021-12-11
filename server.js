@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const db = require('.models');
+const db = require('./models');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -17,3 +17,11 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/populatedb', {
 
 mongoose.set('useCreateIndex', true);
 mongoose.set('debug', true);
+
+db.User.create({ name: 'Steve Smith ' })
+	.then((dbUser) => {
+		console.log(dbUser);
+	})
+	.catch(({ message }) => {
+		console.log(message);
+	});
