@@ -14,7 +14,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/populatedb', {
 	useUnifiedTopology: true,
 });
 
-mongoose.set('useCreateIndex', true);
 mongoose.set('debug', true);
 
 app.listen(PORT, () => {

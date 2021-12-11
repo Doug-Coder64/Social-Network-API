@@ -1,5 +1,5 @@
 const { Schema, model, Types } = require('mongoose');
-const dateFormat = require('../utils/date-format');
+const dateFormat = require('../utils/dateFormat');
 
 // subdocument Schema for ThoughtSchema
 const ReactionSchema = new Schema(
@@ -34,7 +34,7 @@ const ThoughtSchema = new Schema(
 	{
 		thoughtText: {
 			type: String,
-			required: True,
+			required: true,
 			minLength: 1,
 			maxLength: 280,
 		},
