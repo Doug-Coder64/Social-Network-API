@@ -63,6 +63,7 @@ const userController = {
 		});
 	},
 
+	// adds friend
 	addFriend({ params }, res) {
 		User.findOneAndUpdate(
 			{ _id: params.userId },
@@ -81,6 +82,7 @@ const userController = {
 			});
 	},
 
+	// Deletes friend
 	deleteFriend({ params }, res) {
 		User.findOneAndUpdate(
 			{ _id: params.userId },
